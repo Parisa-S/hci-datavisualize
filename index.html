@@ -1,601 +1,278 @@
 <!DOCTYPE html>
 
 <head>
-<style type="text/css">
-svg {
-  font-family: "Helvetica Neue", Helvetica;
-}
+  <title>Oil</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script>
+  google.charts.load('current', {'packages':['line'], 'callback': drawChart1});
 
-.line {
-  fill: none;
-  stroke: #000;
-  stroke-width: 2px;
-}
 
-body {
-  padding-top: 70px;
-}
-</style>
-<meta charset="utf-8">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  function drawChart1() {
+
+    var data = google.visualization.arrayToDataTable([
+      ["month","fuel"],
+      ["2003",15.344],
+      ["2004",17.154],
+      ["2005",21.944],
+      ["2006",26.47333],
+      ["2007",26.80375],
+      ["2008",31.82778],
+      ["2009",27.899],
+      ["2010",31.052],
+      ["2011",33.418],
+      ["2012",34.71889],
+      ["2013",35.13333],
+      ["2014",34.0725],
+      ["2015",28.28429],
+    ]);
+
+    var options = {
+      chart: {
+        title: 'Box Office Earnings in First Two Weeks of Opening',
+        subtitle: 'in millions of dollars (USD)'
+      },
+      height: 500
+    };
+
+    var chart = new google.charts.Line(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
+
+  </script>
+  <script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart'], 'callback': drawChart2});
+
+  function drawChart2() {
+    // Some raw data (not necessarily accurate)
+    var data = google.visualization.arrayToDataTable([
+      ["month","gasoline","kerosene","diesel","average"],
+      ["2003",16.125,16.71,13.88,15.344],
+      ["2004",18.655,19.5,14.48, 17.154],
+      ["2005",23.5,	24.51,	19.105, 21.944],
+      ["2006",27.185,	28.42,	25.35,26.47333],
+      ["2007",27.3575,	28.94,	25.35333,26.80375],
+      ["2008",30.652,	38.34,	31.61667,31.82778],
+      ["2009",27.87666667,	37.21,	24.84,27.899],
+      ["2010",31.62166667,	37.51,	27.76,31.052],
+      ["2011",34.92166667,	38.21,	28.81333,33.418],
+      ["2012",36.47666667,	36.15,	28.73,34.71889],
+      ["2013",37.28833333,	35.46,	28.505,35.13333],
+      ["2014",36.118,	35.26,	28.365,34.0725],
+      ["2015",28.164,	31.15,	26.02,28.28429],
+    ])
+
+    var options = {
+      title : 'Monthly Coffee Production by Country',
+      vAxis: {title: 'Cups'},
+      hAxis: {title: 'Month'},
+      seriesType: 'bars',
+      height: 500,
+      series: {3: {type: 'line'}}
+
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart2_div'));
+    chart.draw(data, options);
+  }
+  </script>
+
+  <script>
+  google.charts.load('current', {'packages':['line'], 'callback': drawChart3});
+
+
+  function drawChart3() {
+
+    var data = google.visualization.arrayToDataTable([
+      ["month","95","91","E10","E20","E85","Gasohol 91"],
+      ["Jan 2003",16.8	,	15.8	,	0	,	0	,	0	,	0	],
+      ["Feb 2003",17.07	,	16.07	,	0	,	0	,	0	,	0	],
+      ["Mar 2003",16.99	,	15.99	,	0	,	0	,	0	,	0	],
+      ["Apr 2003",16.86	,	15.86	,	0	,	0	,	0	,	0	],
+      ["May 2003",16.25	,	15.25	,	0	,	0	,	0	,	0 ],
+      ["Jun 2003",15.41	,	14.41	,	0	,	0	,	0	,	0],
+      ["Jul 2003",16.34	,	15.34	,	0	,	0	,	0	,	0],
+      ["Aug 2003",17.19	,	16.19	,	0	,	0	,	0	,	0],
+      ["Sep 2003",16.36	,	15.44	,	0	,	0	,	0	,	0],
+      ["Oct 2003",16.32	,	15.42	,	0	,	0	,	0	,	0],
+      ["Nov 2003",16.58	,	15.78	,	0	,	0	,	0	,	0],
+      ["Dec 2003",17.05	,	16.26	,	0	,	0	,	0	,	0],
+      ["Jan 2004",17.11	,	16.31	,	0	,	0	,	0	,	0],
+      ["Feb 2004",16.99	,	16.19	,	0	,	0	,	0	,	0],
+      ["Mar 2004",16.99	,	16.19	,	0	,	0	,	0	,	0],
+      ["Apr 2004",16.99	,	16.19	,	0	,	0	,	0	,	0],
+      ["May 2004",17.47	,	16.67	,	0	,	0	,	0	,	0],
+      ["Jun 2004",18.31	,	17.51	,	0	,	0	,	0	,	0],
+      ["Jul 2004",18.85	,	18.05	,	0	,	0	,	0	,	0],
+      ["Aug 2004",20.63	,	19.94	,	0	,	0	,	0	,	0],
+      ["Sep 2004",21.79	,	20.99	,	0	,	0	,	0	,	0],
+      ["Oct 2004",22.02	,	21.22	,	0	,	0	,	0	,	0],
+      ["Nov 2004",21.62	,	20.82	,	0	,	0	,	0	,	0],
+      ["Dec 2004",19.86	,	19.06	,	0	,	0	,	0	,	0],
+      ["Jan 2005",19.37	,	18.57	,	0	,	0	,	0	,	0],
+      ["Feb 2005",20.13	,	19.3	,	0	,	0	,	0	,	0],
+      ["Mar 2005",21.91	,	21.11	,	0	,	0	,	0	,	0],
+      ["Apr 2005",22.74	,	21.98	,	0	,	0	,	0	,	0],
+      ["May 2005",22.4	,	21.6	,	0	,	0	,	0	,	0],
+      ["Jun 2005",23.17	,	22.37	,	0	,	0	,	0	,	0],
+      ["Jul 2005",25.56	,	24.75	,	0	,	0	,	0	,	0],
+      ["Aug 2005",26.05	,	25.25	,	0	,	0	,	0	,	0],
+      ["Sep 2005",27.38	,	26.58	,	0	,	0	,	0	,	0],
+      ["Oct 2005",27.18	,	26.38	,	0	,	0	,	0	,	0],
+      ["Nov 2005",25.44	,	24.64	,	0	,	0	,	0	,	0],
+      ["Dec 2005",25.46	,	24.66	,	0	,	0	,	0	,	0],
+      ["Jan 2006",26.72	,	25.92	,	0	,	0	,	0	,	0],
+      ["Feb 2006",26.51	,	25.71	,	0	,	0	,	0	,	0],
+      ["Mar 2006",26.9	,	26.1	,	0	,	0	,	0	,	0],
+      ["Apr 2006",28.02	,	27.22	,	0	,	0	,	0	,	0],
+      ["May 2006",29.11	,	28.31	,	0	,	0	,	0	,	0],
+      ["Jun 2006",29.69	,	28.89	,	0	,	0	,	0	,	0],
+      ["Jul 2006",30.07	,	29.27	,	0	,	0	,	0	,	0],
+      ["Aug 2006",29.67	,	28.94	,	0	,	0	,	0	,	0],
+      ["Sep 2006",26.88	,	26.08	,	0	,	0	,	0	,	0],
+      ["Oct 2006",25.64	,	24.84	,	0	,	0	,	0	,	0],
+      ["Nov 2006",25.55	,	24.75	,	0	,	0	,	0	,	0],
+      ["Dec 2006",26.19	,	25.39	,	0	,	0	,	0	,	0],
+      ["Jan 2007",25.71	,	24.91	,	24.21	,	0	,	0	,	0],
+      ["Feb 2007",25.63	,	24.83	,	23.9	,	0	,	0	,	23.39],
+      ["Mar 2007",27.34	,	26.54	,	25.12	,	0	,	0	,	24.8],
+      ["Apr 2007",28.68	,	27.88	,	26.18	,	0	,	0	,	25.88],
+      ["May 2007",29.99	,	29.19	,	26.86	,	0	,	0	,	26.56],
+      ["Jun 2007",30.01	,	29.21	,	26.71	,	0	,	0	,	26.4],
+      ["Jul 2007",29.85	,	29.05	,	26.39	,	0	,	0	,	25.75],
+      ["Aug 2007",28.53	,	27.73	,	25.03	,	0	,	0	,	24.23],
+      ["Sep 2007",29.39	,	28.59	,	25.89	,	0	,	0	,	25.09],
+      ["Oct 2007",30.31	,	29.51	,	26.81	,	0	,	0	,	26.01],
+      ["Nov 2007",32.08	,	31.04	,	28.34	,	0	,	0	,	27.45],
+      ["Dec 2007",32.67	,	31.32	,	28.62	,	0	,	0	,	27.82],
+      ["Jan 2008",33.17	,	31.88	,	29.17	,	27.47	,	0	,	28.37],
+      ["Feb 2008",32.94	,	31.84	,	28.94	,	26.94	,	0	,	28.14],
+      ["Mar 2008",34.05	,	32.94	,	30.03	,	28.01	,	0	,	29.21],
+      ["Apr 2008",35.4	,	34.27	,	31.36	,	29.31	,	0	,	30.52],
+      ["May 2008",38.26	,	37.12	,	34.19	,	32.18	,	0	,	33.38],
+      ["Jun 2008",41.64	,	40.4	,	36.8	,	35.17	,	0	,	35.97],
+      ["Jul 2008",42.69	,	40.9	,	36.41	,	35.1	,	0	,	35.61],
+      ["Aug 2008",38.62	,	36.84	,	29.34	,	28.04	,	0	,	28.54],
+      ["Sep 2008",37.84	,	35.87	,	28.35	,	27.02	,	0	,	27.54],
+      ["Oct 2008",34.42	,	31.9	,	25.39	,	24.25	,	0	,	24.59],
+      ["Nov 2008",28.68	,	25.6	,	20.64	,	19.26	,	0	,	19.84],
+      ["Dec 2008",26.28	,	21.54	,	17	,	15.65	,	0	,	16.17],
+
+
+      ["Jan 2009",30	,	22.07	,	17.53	,	16.16	,	17.13	,	16.7],
+      ["Feb 2009",34.41	,	26.24	,	21.71	,	20.4	,	14.69	,	20.89],
+      ["Mar 2009",34.44,27.36,23.39,21.53,15.48,22.58],
+      ["Apr 2009",36.2	,	29.45	,	25.65	,	23.35	,	19.95	,	24.85],
+      ["May 2009",37.4	,	30.66	,	26.86	,	24.54	,	18.33	,	26.02],
+      ["Jun 2009",38.93,32.72,28.92,26.62,19.62,28.12],
+      ["Jul 2009",38.46,33,29.39,27.09,20.63,28.59],
+      ["Aug 2009",40.39,35.4,31.8,29.48,22.49,30.99],
+      ["Sep 2009",39.68,34.7,31.1,28.78,21.92,30.33],
+      ["Oct 2009",39.09,34.08,30.48,28.18,18.72,29.68],
+      ["Nov 2009",40.48,35.34,31.74,29.44,18.72,30.94],
+      ["Dec 2009",40.16,35.03,31.42,29.12,18.72,30.63],
+      ["Jan 2010",41.06,35.92,32.32,30.02,18.72,31.52],
+      ["Feb 2010",41.51,36.38,32.78,30.48,18.72,31.47],
+      ["Mar 2010",42.29,37.15,33.55,31.25,19.07,32.05],
+      ["Apr 2010",42.72,37.56,33.9,31.57,20.07,32.39],
+      ["May 2010",41.51,36.4,32.6,30.3,20.06,31.1],
+      ["Jun 2010",40.57,35.44,31.58,29.34,19.42,30.14],
+      ["Jul 2010",40.52,35.37,31.56,29.27,19.11,30.07],
+      ["Aug 2010",40.68,35.52,31.72,29.42,19.01,30.22],
+      ["Sep 2010",39.6,34.44,30.64,28.34,18.42,29.14],
+      ["Oct 2010",40.54,35.35,31.57,29.23,18.87,30.05],
+      ["Nov 2010",41.34,36.08,32.31,29.96,19.23,30.79],
+      ["Dec 2010",42.75,37.55,33.7,30.3,19.82,31.23],
+      ["Jan 2011",44.04,39.06,34.79,31.36,20.54,32.28],
+      ["Feb 2011",45.1,40.16,35.8,32.38,21.11,33.29],
+      ["Mar 2011",47.29,42.15,37.34,33.91,22.02,34.82],
+      ["Apr 2011",48.71,43.44,38.54,35.12,22.68,36.03],
+      ["May 2011",48.61,43.12,38.21,34.79,22.47,35.7],
+      ["Jun 2011",47.97,42.41,37.51,34.11,22.22,35.01],
+      ["Jul 2011",48.59,43.03,38.12,34.68,22.52,35.62],
+      ["Aug 2011",46.33,40.92,37.09,33.05,21.95,34.56],
+      ["Sep 2011",40.39,36.28,36.35,32.06,21.81,33.3],
+      ["Oct 2011",40.14,36.01,36.08,31.95,21.69,33],
+      ["Nov 2011",39.51,35.29,34.13,31.23,21.18,32.24],
+      ["Dec 2011",39.02,34.73,34.23,30.66,20.78,31.67],
+      ["Jan 2012",41.79,37.65,36.36,33.59,22.02,34.6],
+      ["Feb 2012",43.94,39.81,38.53,35.77,22.85,36.78],
+      ["Mar 2012",45.97,41.85,40.02,37.27,23.87,38.27],
+      ["Apr 2012",47.31,43.21,40.33,37.58,23.98,38.56],
+      ["May 2012",46,41.9,38.4,35.49,22.73,36.64],
+      ["Jun 2012",44.5,40.39,36.37,32.95,20.72,34.63],
+      ["Jul 2012",46.03,41.86,37.14,33.46,21.36,35.38],
+      ["Aug 2012",48.22,43.53,38.31,34.74,22.5,36.16],
+      ["Sep 2012",48.09,43.08,37.67,34.21,21.99,35.21],
+      ["Oct 2012",48.37,43.36,37.71,33.35,21.89,35.26],
+      ["Nov 2012",48.11,43.38,37.16,31.69,21.3,34.7],
+      ["Dec 2012",48.67,43.47,37.55,32.09,21.51,35.1],
+      ["Jan 2013",47.03,44.06,38.1,32.62,21.83,35.64],
+      ["Feb 2013",48.41,45.76,39.83,34.33,22.84,37.34],
+      ["Mar 2013",47.33,45.74,39.61,34.46,22.91,37.16],
+      ["Apr 2013",45.05,0,37.83,32.86,21.88,35.37],
+      ["May 2013",44.82,0,37.58,32.62,21.82,35.13],
+      ["Jun 2013",46.02,0,38.67,33.71,22.66,36.21],
+      ["Jul 2013",47.62,0,40.09,35.12,23.57,37.63],
+      ["Aug 2013",46.98,0,39.45,34.5,23.19,36.99],
+      ["Sep 2013",47.06,0,39.25,34.34,23.27,36.84],
+      ["Oct 2013",46.4,0,38.57,33.62,22.98,36.12],
+      ["Nov 2013",46.55,0,38.78,33.83,23.19,36.33],
+      ["Dec 2013",47.65,0,39.76,34.8,23.78,37.3],
+      ["Jan 2014",48.54,0,40.66,35.74,24.45,38.23],
+      ["Feb 2014",48.42,0,40.53,35.22,24.38,38.08],
+      ["Mar 2014",48.67,0,40.76,35.81,24.52,38.31],
+      ["Apr 2014",48.78,0,40.89,35.94,24.56,38.44],
+      ["May 2014",49.24,0,41.04,36.07,24.67,38.58],
+      ["Jun 2014",49.18,0,40.86,35.87,24.61,38.38],
+      ["Jul 2014",49.18,0,40.66,35.68,24.51,38.19],
+      ["Aug 2014",48.67,0,39.78,34.94,24.28,37.37],
+      ["Sep 2014",44.87,0,37.8,33.98,24.28,35.78],
+      ["Oct 2014",43.98,0,36.75,33.11,23.48,34.73],
+      ["Nov 2014",42.39,0,35,31.67,22.88,32.97],
+      ["Dec 2014",38.85,0,31.52,28.2,22.65,29.57],
+      ["Jan 2015",35.38,0,28.04,25.12,21.98,26.57],
+      ["Feb 2015",35.44,0,28.53,25.78,22.67,27.18],
+      ["Mar 2015",35.5,0,29.36,26.63,23.48,28.04],
+      ["Apr 2015",33.95,0,28.11,25.83,22.81,27.24],
+      ["May 2015",35.03,0,29.08,26.86,23.19,28.2],
+      ["Jun 2015",35.73,0,29.59,27.35,23.37,28.76],
+
+    ]);
+
+    var options = {
+      chart: {
+        title: 'Box Office Earnings in First Two Weeks of Opening',
+        subtitle: 'in millions of dollars (USD)',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      },
+      height: 500
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart3_div'));
+
+    chart.draw(data, options);
+  }
+
+  </script>
+
 </head>
 
 <body>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Data Visualization</a>
     </div>
   </nav>
   <div class="container">
-    <div id="chart1" class="center-block"></div>
+    <h1>RETAIL PRICE OF PETROLEUM PRODUCTS IN BANGKOK</h1>
+    <div id="chart_div" class="center-block"></div>
+    <div id="chart2_div" class="center-block"></div>
+    <div id="chart3_div" class="center-block"></div>
 
-    <p>FUCJ</p>
   </div>
-
-
-
-
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script>
-
-  var m = [20, 20, 30, 20],
-  w = 960 - m[1] - m[3],
-  h = 500 - m[0] - m[2];
-
-  var x,
-  y,
-  duration = 1500,
-  delay = 500;
-
-  var color = d3.scale.category10();
-
-  var svg = d3.select("#chart1").append("svg")
-  .attr("width", w + m[1] + m[3])
-  .attr("height", h + m[0] + m[2])
-  .append("g")
-  .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
-  var stocks,
-  symbols;
-
-  // A line generator, for the dark stroke.
-  var line = d3.svg.line()
-  .interpolate("basis")
-  .x(function(d) { return x(d.date); })
-  .y(function(d) { return y(d.price); });
-
-  // A line generator, for the dark stroke.
-  var axis = d3.svg.line()
-  .interpolate("basis")
-  .x(function(d) { return x(d.date); })
-  .y(h);
-
-  // A area generator, for the dark stroke.
-  var area = d3.svg.area()
-  .interpolate("basis")
-  .x(function(d) { return x(d.date); })
-  .y1(function(d) { return y(d.price); });
-
-  d3.csv("gas.csv", function(data) {
-    var parse = d3.time.format("%b %Y").parse;
-
-    // Nest stock values by symbol.
-    symbols = d3.nest()
-    .key(function(d) { return d.symbol; })
-    .entries(stocks = data);
-
-    // Parse dates and numbers. We assume values are sorted by date.
-    // Also compute the maximum price per symbol, needed for the y-domain.
-    symbols.forEach(function(s) {
-      s.values.forEach(function(d) { d.date = parse(d.date); d.price = +d.price; });
-      s.maxPrice = d3.max(s.values, function(d) { return d.price; });
-      s.sumPrice = d3.sum(s.values, function(d) { return d.price; });
-    });
-
-    // Sort by maximum price, descending.
-    symbols.sort(function(a, b) { return b.maxPrice - a.maxPrice; });
-
-    var g = svg.selectAll("g")
-    .data(symbols)
-    .enter().append("g")
-    .attr("class", "symbol");
-
-    setTimeout(lines, duration);
-  });
-
-  function lines() {
-    x = d3.time.scale().range([0, w - 60]);
-    y = d3.scale.linear().range([h / 4 - 20, 0]);
-
-    // Compute the minimum and maximum date across symbols.
-    x.domain([
-      d3.min(symbols, function(d) { return d.values[0].date; }),
-      d3.max(symbols, function(d) { return d.values[d.values.length - 1].date; })
-    ]);
-
-    var g = svg.selectAll(".symbol")
-    .attr("transform", function(d, i) { return "translate(0," + (i * h / 4 + 10) + ")"; });
-
-    g.each(function(d) {
-      var e = d3.select(this);
-
-      e.append("path")
-      .attr("class", "line");
-
-      e.append("circle")
-      .attr("r", 5)
-      .style("fill", function(d) { return color(d.key); })
-      .style("stroke", "#000")
-      .style("stroke-width", "2px");
-
-      e.append("text")
-      .attr("x", 12)
-      .attr("dy", ".31em")
-      .text(d.key);
-    });
-
-    function draw(k) {
-      g.each(function(d) {
-        var e = d3.select(this);
-        y.domain([0, d.maxPrice]);
-
-        e.select("path")
-        .attr("d", function(d) { return line(d.values.slice(0, k + 1)); });
-
-        e.selectAll("circle, text")
-        .data(function(d) { return [d.values[k], d.values[k]]; })
-        .attr("transform", function(d) { return "translate(" + x(d.date) + "," + y(d.price) + ")"; });
-      });
-    }
-
-    var k = 1, n = symbols[0].values.length;
-    d3.timer(function() {
-      draw(k);
-      if ((k += 2) >= n - 1) {
-        draw(n - 1);
-        setTimeout(horizons, 500);
-        return true;
-      }
-    });
-  }
-
-  function horizons() {
-    svg.insert("defs", ".symbol")
-    .append("clipPath")
-    .attr("id", "clip")
-    .append("rect")
-    .attr("width", w)
-    .attr("height", h / 4 - 20);
-
-    var color = d3.scale.ordinal()
-    .range(["#c6dbef", "#9ecae1", "#6baed6"]);
-
-    var g = svg.selectAll(".symbol")
-    .attr("clip-path", "url(#clip)");
-
-    area
-    .y0(h / 4 - 20);
-
-    g.select("circle").transition()
-    .duration(duration)
-    .attr("transform", function(d) { return "translate(" + (w - 60) + "," + (-h / 4) + ")"; })
-    .remove();
-
-    g.select("text").transition()
-    .duration(duration)
-    .attr("transform", function(d) { return "translate(" + (w - 60) + "," + (h / 4 - 20) + ")"; })
-    .attr("dy", "0em");
-
-    g.each(function(d) {
-      y.domain([0, d.maxPrice]);
-
-      d3.select(this).selectAll(".area")
-      .data(d3.range(3))
-      .enter().insert("path", ".line")
-      .attr("class", "area")
-      .attr("transform", function(d) { return "translate(0," + (d * (h / 4 - 20)) + ")"; })
-      .attr("d", area(d.values))
-      .style("fill", function(d, i) { return color(i); })
-      .style("fill-opacity", 1e-6);
-
-      y.domain([0, d.maxPrice / 3]);
-
-      d3.select(this).selectAll(".line").transition()
-      .duration(duration)
-      .attr("d", line(d.values))
-      .style("stroke-opacity", 1e-6);
-
-      d3.select(this).selectAll(".area").transition()
-      .duration(duration)
-      .style("fill-opacity", 1)
-      .attr("d", area(d.values))
-      .each("end", function() { d3.select(this).style("fill-opacity", null); });
-    });
-
-    setTimeout(areas, duration + delay);
-  }
-
-  function areas() {
-    var g = svg.selectAll(".symbol");
-
-    axis
-    .y(h / 4 - 21);
-
-    g.select(".line")
-    .attr("d", function(d) { return axis(d.values); });
-
-    g.each(function(d) {
-      y.domain([0, d.maxPrice]);
-
-      d3.select(this).select(".line").transition()
-      .duration(duration)
-      .style("stroke-opacity", 1)
-      .each("end", function() { d3.select(this).style("stroke-opacity", null); });
-
-      d3.select(this).selectAll(".area")
-      .filter(function(d, i) { return i; })
-      .transition()
-      .duration(duration)
-      .style("fill-opacity", 1e-6)
-      .attr("d", area(d.values))
-      .remove();
-
-      d3.select(this).selectAll(".area")
-      .filter(function(d, i) { return !i; })
-      .transition()
-      .duration(duration)
-      .style("fill", color(d.key))
-      .attr("d", area(d.values));
-    });
-
-    svg.select("defs").transition()
-    .duration(duration)
-    .remove();
-
-    g.transition()
-    .duration(duration)
-    .each("end", function() { d3.select(this).attr("clip-path", null); });
-
-    setTimeout(stackedArea, duration + delay);
-  }
-
-  function stackedArea() {
-    var stack = d3.layout.stack()
-    .values(function(d) { return d.values; })
-    .x(function(d) { return d.date; })
-    .y(function(d) { return d.price; })
-    .out(function(d, y0, y) { d.price0 = y0; })
-    .order("reverse");
-
-    stack(symbols);
-
-    y
-    .domain([0, d3.max(symbols[0].values.map(function(d) { return d.price + d.price0; }))])
-    .range([h, 0]);
-
-    line
-    .y(function(d) { return y(d.price0); });
-
-    area
-    .y0(function(d) { return y(d.price0); })
-    .y1(function(d) { return y(d.price0 + d.price); });
-
-    var t = svg.selectAll(".symbol").transition()
-    .duration(duration)
-    .attr("transform", "translate(0,0)")
-    .each("end", function() { d3.select(this).attr("transform", null); });
-
-    t.select("path.area")
-    .attr("d", function(d) { return area(d.values); });
-
-    t.select("path.line")
-    .style("stroke-opacity", function(d, i) { return i < 3 ? 1e-6 : 1; })
-    .attr("d", function(d) { return line(d.values); });
-
-    t.select("text")
-    .attr("transform", function(d) { d = d.values[d.values.length - 1]; return "translate(" + (w - 60) + "," + y(d.price / 2 + d.price0) + ")"; });
-
-    setTimeout(streamgraph, duration + delay);
-  }
-
-  function streamgraph() {
-    var stack = d3.layout.stack()
-    .values(function(d) { return d.values; })
-    .x(function(d) { return d.date; })
-    .y(function(d) { return d.price; })
-    .out(function(d, y0, y) { d.price0 = y0; })
-    .order("reverse")
-    .offset("wiggle");
-
-    stack(symbols);
-
-    line
-    .y(function(d) { return y(d.price0); });
-
-    var t = svg.selectAll(".symbol").transition()
-    .duration(duration);
-
-    t.select("path.area")
-    .attr("d", function(d) { return area(d.values); });
-
-    t.select("path.line")
-    .style("stroke-opacity", 1e-6)
-    .attr("d", function(d) { return line(d.values); });
-
-    t.select("text")
-    .attr("transform", function(d) { d = d.values[d.values.length - 1]; return "translate(" + (w - 60) + "," + y(d.price / 2 + d.price0) + ")"; });
-
-    setTimeout(overlappingArea, duration + delay);
-  }
-
-  function overlappingArea() {
-    var g = svg.selectAll(".symbol");
-
-    line
-    .y(function(d) { return y(d.price0 + d.price); });
-
-    g.select(".line")
-    .attr("d", function(d) { return line(d.values); });
-
-    y
-    .domain([0, d3.max(symbols.map(function(d) { return d.maxPrice; }))])
-    .range([h, 0]);
-
-    area
-    .y0(h)
-    .y1(function(d) { return y(d.price); });
-
-    line
-    .y(function(d) { return y(d.price); });
-
-    var t = g.transition()
-    .duration(duration);
-
-    t.select(".line")
-    .style("stroke-opacity", 1)
-    .attr("d", function(d) { return line(d.values); });
-
-    t.select(".area")
-    .style("fill-opacity", .5)
-    .attr("d", function(d) { return area(d.values); });
-
-    t.select("text")
-    .attr("dy", ".31em")
-    .attr("transform", function(d) { d = d.values[d.values.length - 1]; return "translate(" + (w - 60) + "," + y(d.price) + ")"; });
-
-    svg.append("line")
-    .attr("class", "line")
-    .attr("x1", 0)
-    .attr("x2", w - 60)
-    .attr("y1", h)
-    .attr("y2", h)
-    .style("stroke-opacity", 1e-6)
-    .transition()
-    .duration(duration)
-    .style("stroke-opacity", 1);
-
-    setTimeout(groupedBar, duration + delay);
-  }
-
-  function groupedBar() {
-    x = d3.scale.ordinal()
-    .domain(symbols[0].values.map(function(d) { return d.date; }))
-    .rangeBands([0, w - 60], .1);
-
-    var x1 = d3.scale.ordinal()
-    .domain(symbols.map(function(d) { return d.key; }))
-    .rangeBands([0, x.rangeBand()]);
-
-    var g = svg.selectAll(".symbol");
-
-    var t = g.transition()
-    .duration(duration);
-
-    t.select(".line")
-    .style("stroke-opacity", 1e-6)
-    .remove();
-
-    t.select(".area")
-    .style("fill-opacity", 1e-6)
-    .remove();
-
-    g.each(function(p, j) {
-      d3.select(this).selectAll("rect")
-      .data(function(d) { return d.values; })
-      .enter().append("rect")
-      .attr("x", function(d) { return x(d.date) + x1(p.key); })
-      .attr("y", function(d) { return y(d.price); })
-      .attr("width", x1.rangeBand())
-      .attr("height", function(d) { return h - y(d.price); })
-      .style("fill", color(p.key))
-      .style("fill-opacity", 1e-6)
-      .transition()
-      .duration(duration)
-      .style("fill-opacity", 1);
-    });
-
-    setTimeout(stackedBar, duration + delay);
-  }
-
-  function stackedBar() {
-    x.rangeRoundBands([0, w - 60], .1);
-
-    var stack = d3.layout.stack()
-    .values(function(d) { return d.values; })
-    .x(function(d) { return d.date; })
-    .y(function(d) { return d.price; })
-    .out(function(d, y0, y) { d.price0 = y0; })
-    .order("reverse");
-
-    var g = svg.selectAll(".symbol");
-
-    stack(symbols);
-
-    y
-    .domain([0, d3.max(symbols[0].values.map(function(d) { return d.price + d.price0; }))])
-    .range([h, 0]);
-
-    var t = g.transition()
-    .duration(duration / 2);
-
-    t.select("text")
-    .delay(symbols[0].values.length * 10)
-    .attr("transform", function(d) { d = d.values[d.values.length - 1]; return "translate(" + (w - 60) + "," + y(d.price / 2 + d.price0) + ")"; });
-
-    t.selectAll("rect")
-    .delay(function(d, i) { return i * 10; })
-    .attr("y", function(d) { return y(d.price0 + d.price); })
-    .attr("height", function(d) { return h - y(d.price); })
-    .each("end", function() {
-      d3.select(this)
-      .style("stroke", "#fff")
-      .style("stroke-opacity", 1e-6)
-      .transition()
-      .duration(duration / 2)
-      .attr("x", function(d) { return x(d.date); })
-      .attr("width", x.rangeBand())
-      .style("stroke-opacity", 1);
-    });
-
-    setTimeout(transposeBar, duration + symbols[0].values.length * 10 + delay);
-  }
-
-  function transposeBar() {
-    x
-    .domain(symbols.map(function(d) { return d.key; }))
-    .rangeRoundBands([0, w], .2);
-
-    y
-    .domain([0, d3.max(symbols.map(function(d) { return d3.sum(d.values.map(function(d) { return d.price; })); }))]);
-
-    var stack = d3.layout.stack()
-    .x(function(d, i) { return i; })
-    .y(function(d) { return d.price; })
-    .out(function(d, y0, y) { d.price0 = y0; });
-
-    stack(d3.zip.apply(null, symbols.map(function(d) { return d.values; }))); // transpose!
-
-    var g = svg.selectAll(".symbol");
-
-    var t = g.transition()
-    .duration(duration / 2);
-
-    t.selectAll("rect")
-    .delay(function(d, i) { return i * 10; })
-    .attr("y", function(d) { return y(d.price0 + d.price) - 1; })
-    .attr("height", function(d) { return h - y(d.price) + 1; })
-    .attr("x", function(d) { return x(d.symbol); })
-    .attr("width", x.rangeBand())
-    .style("stroke-opacity", 1e-6);
-
-    t.select("text")
-    .attr("x", 0)
-    .attr("transform", function(d) { return "translate(" + (x(d.key) + x.rangeBand() / 2) + "," + h + ")"; })
-    .attr("dy", "1.31em")
-    .each("end", function() { d3.select(this).attr("x", null).attr("text-anchor", "middle"); });
-
-    svg.select("line").transition()
-    .duration(duration)
-    .attr("x2", w);
-
-    setTimeout(donut,  duration / 2 + symbols[0].values.length * 10 + delay);
-  }
-
-  function donut() {
-    var g = svg.selectAll(".symbol");
-
-    g.selectAll("rect").remove();
-
-    var pie = d3.layout.pie()
-    .value(function(d) { return d.sumPrice; });
-
-    var arc = d3.svg.arc();
-
-    g.append("path")
-    .style("fill", function(d) { return color(d.key); })
-    .data(function() { return pie(symbols); })
-    .transition()
-    .duration(duration)
-    .tween("arc", arcTween);
-
-    g.select("text").transition()
-    .duration(duration)
-    .attr("dy", ".31em");
-
-    svg.select("line").transition()
-    .duration(duration)
-    .attr("y1", 2 * h)
-    .attr("y2", 2 * h)
-    .remove();
-
-    function arcTween(d) {
-      var path = d3.select(this),
-      text = d3.select(this.parentNode.appendChild(this.previousSibling)),
-      x0 = x(d.data.key),
-      y0 = h - y(d.data.sumPrice);
-
-      return function(t) {
-        var r = h / 2 / Math.min(1, t + 1e-3),
-        a = Math.cos(t * Math.PI / 2),
-        xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2),
-        yy = ((a) * h + (1 - a) * h / 2),
-        f = {
-          innerRadius: r - x.rangeBand() / (2 - a),
-          outerRadius: r,
-          startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle,
-          endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle
-        };
-
-        path.attr("transform", "translate(" + xx + "," + yy + ")");
-        path.attr("d", arc(f));
-        text.attr("transform", "translate(" + arc.centroid(f) + ")translate(" + xx + "," + yy + ")rotate(" + ((f.startAngle + f.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
-      };
-    }
-
-    setTimeout(donutExplode, duration + delay);
-  }
-
-  function donutExplode() {
-    var r0a = h / 2 - x.rangeBand() / 2,
-    r1a = h / 2,
-    r0b = 2 * h - x.rangeBand() / 2,
-    r1b = 2 * h,
-    arc = d3.svg.arc();
-
-    svg.selectAll(".symbol path")
-    .each(transitionExplode);
-
-    function transitionExplode(d, i) {
-      d.innerRadius = r0a;
-      d.outerRadius = r1a;
-      d3.select(this).transition()
-      .duration(duration / 2)
-      .tween("arc", tweenArc({
-        innerRadius: r0b,
-        outerRadius: r1b
-      }));
-    }
-
-    function tweenArc(b) {
-      return function(a) {
-        var path = d3.select(this),
-        text = d3.select(this.nextSibling),
-        i = d3.interpolate(a, b);
-        for (var key in b) a[key] = b[key]; // update data
-        return function(t) {
-          var a = i(t);
-          path.attr("d", arc(a));
-          text.attr("transform", "translate(" + arc.centroid(a) + ")translate(" + w / 2 + "," + h / 2 +")rotate(" + ((a.startAngle + a.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + ")");
-        };
-      }
-    }
-
-    setTimeout(function() {
-      svg.selectAll("*").remove();
-      svg.selectAll("g").data(symbols).enter().append("g").attr("class", "symbol");
-      lines();
-    }, duration);
-  }
-
-  </script>
+</body>
